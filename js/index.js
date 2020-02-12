@@ -38,7 +38,24 @@ copyText.addEventListener('copy',(e) => {
     e.preventDefault();
 });
 
-//scroll
+//wheel
 copyText.addEventListener('wheel',(e) => {
     copyText.style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+});
+
+//keydown
+document.addEventListener('keydown', event => {
+    document.querySelector('.intro p').textContent = document.querySelector('.intro p').textContent + event.key;
+});
+
+//click
+const allImgs = document.querySelectorAll('img').forEach(el => {
+    el.addEventListener('click', () => {
+            el.style.transform = 'rotate('+Math.floor(Math.random()*(360))+'deg)';
+    });
+});
+
+//auxclick
+document.addEventListener('auxclick', event => {
+    document.querySelector('body').style.display = "none";
 });
